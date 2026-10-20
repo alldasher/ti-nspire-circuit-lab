@@ -1,36 +1,38 @@
-# H1 Circuit Lab — برنامج رسم وتحليل دوائر على TI‑Nspire CX CAS
+# H1 Circuit Lab for TI-Nspire CX CAS
 
-انقل `H1_CIRCUIT_LAB_MEASURE.tns` إلى الآلة باستخدام N‑Link، وافتحه كمستند. هذه النسخة تضيف قياسات مباشرة DC/AC مع واجهة أصلح للشاشة الفعلية.
+**Ready-to-transfer calculator file:** `H1_CIRCUIT_LAB_MEASURE.tns`
 
-## كيف ترسم وتتحكم
+Copy the `.tns` file to your calculator with TI-Nspire Link Software (N-Link), then open it as a document. This version includes direct DC and AC measurements and a circuit editor designed for the calculator screen.
 
-من القائمة الرئيسية استخدم الأسهم و`Enter`؛ اختر الرسم، القياس، دائرة فارغة، أو أحد المثالين القابلين للتعديل (مقسّم جهد وBJT Common Emitter).
+## Drawing and editing circuits
 
-- الأسهم تحرّك المؤشر البرتقالي بين نقاط الشبكة. `8` يفتح قائمة العناصر؛ اختر بالأسهم ثم `Enter`. ويمكن التنقل بين العناصر مباشرة بـ`1`/`2` أو `Tab`.
-- `3` يدوّر العنصر **قبل وضعه**، و`Enter` يضعه. الاتجاه الحالي ظاهر أعلى الشاشة. المقاومة والمكثف وغيرهما يأخذان الفرع بين نقطتين؛ أما BJT وMOSFET وJFET فتدور أشكالها وأطرافها معًا بأربع جهات. في أسفل شاشة الرسم يظهر دليل الأطراف: `B/G` للقاعدة/البوابة، `C/D` للمجمّع/المصرف، `E/S` للباعث/المنبع؛ والحروف `L/U/R/D` تعني يسار/فوق/يمين/تحت. لا يمكن وضع مركز ترانزستور عند حافة لا تتسع لأطرافه.
-- لتدوير **ترانزستور موجود**: اختر `SELECT`، ضع المؤشر على مركزه، اضغط `Enter` أو `5` لفتح خصائصه، ثم `3`. يتغيّر الرسم والتوصيل الفعلي للأطراف. إذا كان الاتجاه التالي غير متاح، تظهر رسالة تشرح السبب. يمكن النقر على رمزه بالـtouchpad لفتح الخصائص أيضًا.
-- للحذف: ضع المؤشر على العنصر، ثم اضغط زر `Del` في الآلة (وهو `Backspace`). أو افتح خصائصه واضغط `Del` هناك. إذا اجتمعت عدة عناصر في عقدة واحدة، افتح الخصائص واستخدم ←/→ للتنقل بينها، ثم احذف المطلوب. `9` يتراجع عن آخر تغيير، بحد أقصى 8 تغييرات خلال الجلسة.
-- في صفحة الخصائص، ↑/↓ لاختيار القيمة، و`Enter` لتحريرها في حقل إدخال الآلة الطبيعي. اكتب مثل `2.2k` أو `10m` ثم `Enter` للحفظ، أو `Esc` للإلغاء.
-- `0` لفتح قائمة القياس المباشر، `4` للتقرير الكامل، `6` لتردد AC، `7` للمساعدة، و`Esc` للعودة. في التقرير ↑/↓ للتمرير و←/→ للقفز صفحة. `GROUND` هو مرجع 0V ومطلوب للحل. أداتا `IN PROBE` و`OUT PROBE` تحددان عقدتي قياس الكسب في التقرير.
+Use the arrow keys and `Enter` in the main menu to choose the circuit editor, measurement mode, a blank circuit, or an editable example (voltage divider or BJT common-emitter).
 
-## القياس المباشر
+- Move the orange cursor across the grid with the arrow keys. Press `8` to open the component menu, select an item with the arrows, then press `Enter`. Use `1` and `2` or `Tab` to cycle through components.
+- Press `3` to rotate the selected component **before placing it**, then press `Enter`. The current orientation is shown at the top of the screen. Resistors, capacitors, and similar components connect between two grid points. BJT, MOSFET, and JFET symbols rotate with their terminals. The terminal guide at the bottom shows `B/G` (base/gate), `C/D` (collector/drain), `E/S` (emitter/source), and `L/U/R/D` (left/up/right/down). A transistor cannot be placed where there is not enough room for its terminals.
+- To rotate an existing transistor, choose `SELECT`, move the cursor to its center, press `Enter` or `5` to open its properties, then press `3`. The symbol and its electrical terminals rotate together. If the next orientation cannot fit, the app explains why. You can also click the symbol with the touchpad to open its properties.
+- To delete a component, move the cursor over it and press the calculator's `Del` key (the key labeled `Backspace`). You can also delete it from its properties page. If several components meet at one node, use left/right on the properties page to select the one you want. Press `9` to undo the most recent edit (up to 8 edits per session).
+- On a properties page, use up/down to select a value and press `Enter` to edit it in the calculator's normal input field. Values such as `2.2k` or `10m` are accepted. Press `Enter` to save or `Esc` to cancel.
+- Press `0` in the editor for direct measurements, `4` for the full report, `6` to set the AC frequency, and `7` for help. Press `Esc` to go back. In reports, use up/down to scroll and left/right to jump between pages. A `GROUND` component is required as the 0 V reference. `IN PROBE` and `OUT PROBE` select the nodes used for gain measurements.
 
-بعد رسم الدائرة وتوصيلها بالأرضي، اضغط `0` من شاشة الرسم، أو اختر **Measure DC or AC** من القائمة الرئيسية. تظهر خمس خيارات:
+## Direct measurements
 
-1. **DC VOLTAGE:** اختر العقدة الموجبة بالمؤشر واضغط `Enter`، ثم العقدة السالبة واضغط `Enter`. النتيجة هي `V(+) − V(−)`، ويمكن اختيار الأرضي كالعقدة السالبة لقياس جهد عقدة بالنسبة للصفر.
-2. **AC VOLTAGE:** نفس اختيار العقدتين؛ تظهر السعة العظمى `Peak` والقيمة الفعّالة `RMS` وزاوية الطور عند التردد المحدد.
-3. **DC CURRENT:** اختر العنصر باسمه من القائمة واضغط `Enter`. يظهر التيار الموقّع؛ الإشارة السالبة تعني أن اتجاه التيار معاكس للاتجاه المعروض.
-4. **AC CURRENT:** اختر العنصر باسمه؛ يظهر `Peak` و`RMS` والطور. للترانزستور BJT يُقاس تيار المجمع أساسًا؛ في قياس DC يظهر أيضًا تيار القاعدة.
-5. **FULL ANALYSIS REPORT:** يعرض جدول التحليل الشامل القديم للجهود والتيارات ومناطق تشغيل العناصر.
+After drawing a circuit and connecting ground, press `0` in the editor or choose **Measure DC or AC** from the main menu. The measurement menu offers:
 
-المقاومة والمكثف والدايود والمصادر: اتجاه التيار من الطرف `A` إلى الطرف `B` كما تبينه العقدتان في النتيجة. في BJT الاتجاه من `C` إلى `E`، وفي MOSFET/JFET من `D` إلى `S`. إن كان قياس AC صفرًا، افتح خصائص مصدر الجهد/التيار وضع قيمة غير صفرية لخانة **AC peak** ثم اضبط التردد بـ`6`.
+1. **DC Voltage:** Choose the positive node, press `Enter`, then choose the negative node. The result is `V(+) − V(−)`. Choose ground as the negative node to measure a node voltage relative to 0 V.
+2. **AC Voltage:** Choose the same two nodes. The result includes peak amplitude, RMS value, and phase at the selected frequency.
+3. **DC Current:** Choose a component by name. The signed current is shown; a negative sign means the current flows opposite to the displayed reference direction.
+4. **AC Current:** Choose a component to see peak, RMS, and phase. For a BJT, AC collector current is measured; the DC measurement also shows base current.
+5. **Full Analysis Report:** Shows the full table of node voltages, currents, and device operating regions.
 
-## التحليل المدعوم
+For resistors, capacitors, diodes, and sources, the reference current direction is from terminal `A` to terminal `B`. For BJTs it is from `C` to `E`; for MOSFETs/JFETs it is from `D` to `S`. If an AC measurement is zero, open the voltage/current source properties, enter a nonzero **AC peak** value, and set the frequency with `6`.
 
-العناصر: مقاومة، مكثف، مصدر جهد DC/AC، مصدر تيار DC/AC، دايود، BJT NPN، NMOS، JFET، سلك، وأرضي. يحلّ البرنامج نقطة التشغيل DC من التوصيلات الفعلية، ثم تحليل AC الخطي حولها عند تردد تختاره. يعرض جهود العقد، تيارات وقدرات العناصر، مناطق تشغيل الترانزستورات، جهود وتيارات AC بمقاديرها وزواياها، والكسب بين نقطتي القياس. ينبه أيضًا إذا كبرت إشارة AC مقارنة بمجال صلاحية تقريب small-signal. المكثف مفتوح في DC وله ممانعة تعتمد على التردد في AC.
+## Supported analysis
 
-## حدود مهمة
+Components: resistors, capacitors, DC/AC voltage sources, DC/AC current sources, diodes, NPN BJTs, NMOS, JFETs, wires, and ground. The program finds the DC operating point from the drawn connections, then performs linear AC analysis around that point at the selected frequency. Results include node voltages, component currents and power, transistor operating regions, AC voltage/current magnitude and phase, and gain between the selected probe nodes. A warning is shown when the AC signal is too large for the small-signal approximation. Capacitors are open circuits for DC and have frequency-dependent impedance in AC.
 
-هذا ليس LTspice كاملًا: لا توجد محاكاة زمنية، مسح تردد آلي، PNP/PMOS، محاثات، مصادر تابعة، أو نماذج تصنيع SPICE. النماذج التعليمية مبسطة: BJT من نوع Ebers–Moll مبسط، وMOS/JFET بنموذج square-law، والدايود أسي؛ في القطع/التريود/الانحياز الأمامي لبوابة JFET تظهر تنبيهات. الحد العملي 30 عنصرًا و32 متغيرًا مستقلًا. إذا بقيت عقدة معلّقة بلا مسار DC، يعطي خطأ بدل نتيجة وهمية. جرى فحص القياسات والأزرار وتخطيط الشاشات برمجيًا على أكثر من حجم؛ يلزم تجربة أخيرة على الآلة نفسها لأن محاكي TI غير متاح هنا.
+## Model limitations
 
-المصدر `H1_CIRCUIT_LAB.lua` وملف الفحص `H1_CIRCUIT_LAB_TEST.lua` لا يلزم نقلهما إلى الآلة.
+This is an educational circuit analyzer, not a full LTspice replacement. It does not provide transient simulation, automatic frequency sweeps, PNP/PMOS devices, inductors, dependent sources, or manufacturer SPICE models. The device models are simplified: an Ebers–Moll-style BJT model, square-law MOSFET/JFET models, and an exponential diode model. Warnings are shown for unsupported or out-of-range cases such as cutoff, MOSFET triode operation, or forward-biased JFET gates. The practical limits are 30 components and 32 independent variables. Floating nodes without a DC path cause an error instead of a misleading result.
+
+The Lua source and regression checks are included for development; they do not need to be transferred to the calculator. The app was checked with software tests and screen-layout previews. A final check on physical calculator hardware is still recommended because a TI calculator emulator was not available during development.
