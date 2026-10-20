@@ -1,6 +1,6 @@
 # H1 Circuit Lab for TI-Nspire CX CAS
 
-**Ready-to-transfer calculator file:** `H1_CIRCUIT_LAB_MEASURE.tns`
+**Ready-to-transfer calculator file:** [Download H1_CIRCUIT_LAB_MEASURE.tns](https://github.com/alldasher/ti-nspire-circuit-lab/raw/refs/heads/main/H1_CIRCUIT_LAB_MEASURE.tns)
 
 Copy the `.tns` file to your calculator with TI-Nspire Link Software (N-Link), then open it as a document. This version includes direct DC and AC measurements and a circuit editor designed for the calculator screen.
 
@@ -34,5 +34,10 @@ Components: resistors, capacitors, DC/AC voltage sources, DC/AC current sources,
 ## Model limitations
 
 This is an educational circuit analyzer, not a full LTspice replacement. It does not provide transient simulation, automatic frequency sweeps, PNP/PMOS devices, inductors, dependent sources, or manufacturer SPICE models. The device models are simplified: an Ebers–Moll-style BJT model, square-law MOSFET/JFET models, and an exponential diode model. Warnings are shown for unsupported or out-of-range cases such as cutoff, MOSFET triode operation, or forward-biased JFET gates. The practical limits are 30 components and 32 independent variables. Floating nodes without a DC path cause an error instead of a misleading result.
+
+## Community and support
+
+- Ask questions or share feedback in [GitHub Discussions](https://github.com/alldasher/ti-nspire-circuit-lab/discussions).
+- Report reproducible bugs through [GitHub Issues](https://github.com/alldasher/ti-nspire-circuit-lab/issues).
 
 The Lua source and regression checks are included for development; they do not need to be transferred to the calculator. The app was checked with software tests and screen-layout previews. A final check on physical calculator hardware is still recommended because a TI calculator emulator was not available during development.
